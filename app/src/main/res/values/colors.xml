@@ -1,0 +1,12 @@
+<resources>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="fondo1">#DBDBDB</color>
+    <color name="fondo2">#24213e</color>
+    <color name="fondoTarea">#4E487C</color>
+    <color name="fondoCabecera">#7265BF</color>
+    <color name="textoTitulo">#FF212121</color>
+    <color name="textoSubtitulo">#FF757575</color>
+    <color name="texto">#FF000000</color>
+    <color name="textoCabecera">#F0F0F0</color>
+</resources>

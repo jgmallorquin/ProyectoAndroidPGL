@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tareas"
+        android:icon="@drawable/ic_tareas"
+        android:title="Tareas"/>
+
+    <item
+        android:id="@+id/mascota"
+        android:icon="@drawable/ic_mascota"
+        android:title="Mascota"/>
+
+    <item
+        android:id="@+id/placeholder"
+        android:title=""/>
+
+    <item
+        android:id="@+id/tienda"
+        android:icon="@drawable/ic_tienda"
+        android:title="Tienda"/>
+
+    <item
+        android:id="@+id/salir"
+        android:icon="@drawable/ic_salir"
+        android:title="Salir"/>
+
+</menu>

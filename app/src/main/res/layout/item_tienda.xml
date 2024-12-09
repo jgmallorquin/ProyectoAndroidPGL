@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo_redondeado"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="Imagen del artículo"
+        android:src="@drawable/ic_agregar" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del artículo"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/blanco" />
+
+    <Button
+        android:id="@+id/buy_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:text="10€"
+        android:textColor="@color/texto"
+        android:drawableLeft="@drawable/icono_boton_comprar"
+        android:ellipsize="end"
+        android:singleLine="true" />
+</LinearLayout>

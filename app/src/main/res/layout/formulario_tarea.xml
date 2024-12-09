@@ -1,0 +1,226 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blanco"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/pixelify_sans"
+            android:text="CREAR NUEVA TAREA"
+            android:textAlignment="center"
+            android:textColor="@color/texto"
+            android:textSize="34sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la tarea"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_tarea_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la tarea"
+            android:inputType="text"
+            android:textColor="@color/texto"
+            android:textColorHint="@color/texto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_tarea_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción"
+            android:inputType="textMultiLine"
+            android:textColor="@color/texto"
+            android:textColorHint="@color/texto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dificultad"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_dificultad_muy_facil"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:contentDescription="Muy Fácil"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_muy_facil" />
+
+            <ImageButton
+                android:id="@+id/btn_dificultad_facil"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:contentDescription="Fácil"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_facil" />
+
+            <ImageButton
+                android:id="@+id/btn_dificultad_normal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:contentDescription="Normal"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_normal" />
+
+            <ImageButton
+                android:id="@+id/btn_dificultad_dificil"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:contentDescription="Difícil"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_dificil" />
+
+            <ImageButton
+                android:id="@+id/btn_dificultad_muy_dificil"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:contentDescription="Muy Difícil"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_muy_dificil" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_dificultad_seleccionada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selecciona una dificultad"
+            android:textAlignment="center"
+            android:textColor="@color/texto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Duración"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Horas"
+                    android:textColor="@color/texto" />
+
+                <SeekBar
+                    android:id="@+id/sb_duracion_horas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="23" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Minutos"
+                    android:textColor="@color/texto" />
+
+                <SeekBar
+                    android:id="@+id/sb_duracion_minutos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="59" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_duracion_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="00:00"
+                android:textColor="@color/texto"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Recompensa"
+            android:textAlignment="center"
+            android:textColor="@color/texto"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_monedas_obtenidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/texto"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_guardar_tarea"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btn_borrar_tarea"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Borrar" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
