@@ -1,5 +1,5 @@
 package com.proyectopgl
 
 enum class EstadoMascota {
-    PASEAR, JUGAR, SEGUIR, COMER, FELIZ, ATACAR, DEFENDER
+    PASEAR, JUGAR, SEGUIR, COMER, FELIZ, ATACAR, MAREADO
 }

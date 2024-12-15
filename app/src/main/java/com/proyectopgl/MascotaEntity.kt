@@ -49,7 +49,7 @@ class MascotaEntity(
             EstadoMascota.JUGAR -> jugar()
             EstadoMascota.COMER -> comer()
             EstadoMascota.ATACAR -> atacar()
-            EstadoMascota.DEFENDER -> defender()
+            EstadoMascota.MAREADO -> mareado()
             EstadoMascota.SEGUIR -> Log.d("Mascota", "Estado cambiado a SEGUIR")
             EstadoMascota.FELIZ -> feliz()
         }
@@ -68,7 +68,9 @@ class MascotaEntity(
 
     private fun comer() {
         println("$nombre está comiendo.")
-        setAnimacion(3)
+        seguir(100f, -128f, animacion = 4)
+        handler.postDelayed({ cambiarEstado(EstadoMascota.PASEAR) }, 5000)
+
     }
 
     private fun atacar() {
@@ -76,9 +78,11 @@ class MascotaEntity(
         setAnimacion(4)
     }
 
-    private fun defender() {
-        println("$nombre está defendiendo.")
-        setAnimacion(5)
+    private fun mareado() {
+        println("$nombre está mareado.")
+        setAnimacion(0)
+        setExpresion(1, 2, 5000)
+        handler.postDelayed({ cambiarEstado(EstadoMascota.PASEAR) }, 5000)
     }
 
     private fun feliz() {
@@ -121,6 +125,37 @@ class MascotaEntity(
             animY.start()
 
             setAnimacion(2)
+
+            if (x > layoutMascota.x) {
+                layoutMascota.scaleX = 1f
+            } else {
+                layoutMascota.scaleX = -1f
+            }
+
+            // Esperar 5 segundos y luego volver al estado PASEAR
+            handler.postDelayed({
+                Log.d("Mascota", "Volviendo al estado PASEAR")
+                cambiarEstado(EstadoMascota.PASEAR)
+            }, 5000)
+        }
+    }
+
+    fun seguir(x: Float, y: Float, animacion: Int) {
+        cambiarEstado(EstadoMascota.SEGUIR)
+        setExpresion(0, 3, 3000)
+        Log.d("Mascota", "Moviendo a: ($x, $y)")
+
+        handler.post {
+            val animX = ObjectAnimator.ofFloat(layoutMascota, "x", layoutMascota.x, x)
+            val animY = ObjectAnimator.ofFloat(layoutMascota, "y", layoutMascota.y, y)
+
+            animX.duration = velocidad
+            animY.duration = velocidad
+
+            animX.start()
+            animY.start()
+
+            setAnimacion(animacion)
 
             if (x > layoutMascota.x) {
                 layoutMascota.scaleX = 1f
@@ -190,4 +225,5 @@ class MascotaEntity(
     fun obtenerEscala(): Float {
         return escala
     }
+
 }
